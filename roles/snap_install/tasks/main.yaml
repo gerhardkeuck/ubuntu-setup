@@ -1,0 +1,21 @@
+---
+# Install Snap packages with classic confinement
+- name: Install Snap packages with classic confinement
+  community.general.snap:
+    name: "{{ item }}"
+    classic: yes
+  loop:
+    - code
+    - obsidian
+  when: ansible_os_family == "Debian"
+
+# Install Snap packages without classic confinement
+- name: Install Snap packages without classic confinement
+  community.general.snap:
+    name: "{{ item }}"
+  loop:
+    - todoist
+    - telegram-desktop
+    - spotify
+    - slack
+  when: ansible_os_family == "Debian"

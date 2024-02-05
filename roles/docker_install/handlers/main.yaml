@@ -1,0 +1,8 @@
+---
+- name: Update package index
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: User added to docker group
+  ansible.builtin.debug:
+    msg: "Please restart your computer to apply changes to the docker group membership."

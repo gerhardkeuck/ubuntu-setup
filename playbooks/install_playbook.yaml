@@ -1,0 +1,9 @@
+---
+- name: Setup the local machine with relevant required software.
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  become: yes
+  roles:
+    - docker_install
+    - snap_install
