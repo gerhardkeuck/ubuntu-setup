@@ -7,3 +7,4 @@
   roles:
     - docker_install
     - snap_install
+    - apt_install

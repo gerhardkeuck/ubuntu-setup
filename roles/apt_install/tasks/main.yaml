@@ -1,0 +1,7 @@
+- name: Install PostgreSQL Client Common package
+  ansible.builtin.apt:
+    name:
+      - postgresql-client-common
+    state: present
+    update_cache: yes
+  become: yes
