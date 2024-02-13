@@ -3,6 +3,16 @@
     name:
       - postgresql-client-common
       - postgresql-client
+      - ipython3
     state: present
     update_cache: yes
   become: yes
+
+- name: Ensure alias for python3 is set in .bashrc
+  ansible.builtin.lineinfile:
+    path: ~/.bashrc
+    line: 'alias p="python3"'
+    state: present
+    create: yes
+    backup: yes
+  become: no
